@@ -1097,3 +1097,27 @@ Processing by SongsController#new as HTML
   Rendered songs/_form.html.erb (8.2ms)
   Rendered songs/new.html.erb within layouts/application (9.0ms)
 Completed 200 OK in 33ms (Views: 18.1ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/songs" for 74.73.38.177 at 2018-01-16 23:10:15 +0000
+Cannot render console from 74.73.38.177! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0LqBOMWM5YDA0zQ1nyco8gIt/Djpy8zH6KYplexkBBqM3zqkQ7UM64Vx8/GWBBG8iC6NjJ4i3NrSIHtuDA1KAg==", "song"=>{"title"=>"Song", "artist_name"=>"Koi", "album_cover"=>#<ActionDispatch::Http::UploadedFile:0x007fbb8c449f90 @tempfile=#<Tempfile:/tmp/RackMultipart20180116-3029-oo6krh.jpg>, @original_filename="10480226_10152801820642356_7590846851776089509_n.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"song[album_cover]\"; filename=\"10480226_10152801820642356_7590846851776089509_n.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Song"}
+  [1m[35mArtist Load (0.2ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT 1  [["name", "Koi"]]
+Command :: file -b --mime '/tmp/b16313cf82bced4527d56989a8c1d45f20180116-3029-7p0um2.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/tmp/b16313cf82bced4527d56989a8c1d45f20180116-3029-1ru2cv0.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/tmp/b16313cf82bced4527d56989a8c1d45f20180116-3029-1ru2cv0.jpg[0]'
+Command :: convert '/tmp/b16313cf82bced4527d56989a8c1d45f20180116-3029-1ru2cv0.jpg[0]' -auto-orient -resize "100x100>" '/tmp/3246024ea66fe1995a1e9812558d506a20180116-3029-4rkxt9'
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Command :: file -b --mime '/tmp/b16313cf82bced4527d56989a8c1d45f20180116-3029-gh0cnn.jpg'
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "songs" ("title", "artist_id", "album_cover_file_name", "album_cover_content_type", "album_cover_file_size", "album_cover_updated_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["title", "Song"], ["artist_id", 7], ["album_cover_file_name", "10480226_10152801820642356_7590846851776089509_n.jpg"], ["album_cover_content_type", "image/jpeg"], ["album_cover_file_size", 20392], ["album_cover_updated_at", "2018-01-16 23:10:15.110245"], ["created_at", "2018-01-16 23:10:15.253984"], ["updated_at", "2018-01-16 23:10:15.253984"]]
+  [1m[36m (4.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://165.227.81.218:45960/songs/13
+Completed 302 Found in 172ms (ActiveRecord: 5.3ms)
+
+
+Started GET "/songs/13" for 74.73.38.177 at 2018-01-16 23:10:15 +0000
+Cannot render console from 74.73.38.177! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mSong Load (0.2ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", 13]]
