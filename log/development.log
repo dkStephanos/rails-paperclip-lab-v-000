@@ -976,3 +976,81 @@ Migrating to AddAttachmentAlbumCoverToSongs (20180116225153)
             FROM sqlite_temp_master
             WHERE name='index_songs_on_artist_id' AND type='index'
 
+
+
+Started GET "/songs" for 74.73.38.177 at 2018-01-16 22:54:10 +0000
+Cannot render console from 74.73.38.177! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SongsController#index as HTML
+  [1m[35mSong Load (0.4ms)[0m  SELECT "songs".* FROM "songs"
+  [1m[36mArtist Load (0.3ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 6]]
+  Rendered songs/index.html.erb within layouts/application (381.7ms)
+Completed 200 OK in 442ms (Views: 427.3ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/songs/3" for 74.73.38.177 at 2018-01-16 22:54:14 +0000
+Cannot render console from 74.73.38.177! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mSong Load (0.3ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered songs/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 17ms (Views: 8.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/songs" for 74.73.38.177 at 2018-01-16 22:54:17 +0000
+Cannot render console from 74.73.38.177! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SongsController#index as HTML
+  [1m[36mSong Load (0.3ms)[0m  [1mSELECT "songs".* FROM "songs"[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mArtist Load (0.2ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mArtist Load (0.2ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered songs/index.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 22ms (Views: 20.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/songs/new" for 74.73.38.177 at 2018-01-16 22:54:21 +0000
+Cannot render console from 74.73.38.177! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SongsController#new as HTML
+  Rendered songs/_form.html.erb (25.8ms)
+  Rendered songs/new.html.erb within layouts/application (31.4ms)
+Completed 200 OK in 36ms (Views: 35.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/songs" for 74.73.38.177 at 2018-01-16 22:54:42 +0000
+Cannot render console from 74.73.38.177! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4WyLQhsj/8AShohaW4hZ8TT5INXyp+r6A/Av6CktzV29CTDenRoWq1ckT55Sq2C/vvpRYYVO+uc5dn0TyUSDRQ==", "song"=>{"title"=>"Me", "artist_name"=>"Koi", "album_cover"=>#<ActionDispatch::Http::UploadedFile:0x007f961e5ee1b8 @tempfile=#<Tempfile:/tmp/RackMultipart20180116-2661-c02d8c.jpg>, @original_filename="10480226_10152801820642356_7590846851776089509_n.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"song[album_cover]\"; filename=\"10480226_10152801820642356_7590846851776089509_n.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Song"}
+Unpermitted parameter: album_cover
+  [1m[35mArtist Load (0.3ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT 1  [["name", "Koi"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "artists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Koi"], ["created_at", "2018-01-16 22:54:42.256432"], ["updated_at", "2018-01-16 22:54:42.256432"]]
+  [1m[36m (2.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "songs" ("title", "artist_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Me"], ["artist_id", 7], ["created_at", "2018-01-16 22:54:42.262804"], ["updated_at", "2018-01-16 22:54:42.262804"]]
+  [1m[35m (2.3ms)[0m  commit transaction
+Redirected to http://165.227.81.218:45960/songs/11
+Completed 302 Found in 15ms (ActiveRecord: 6.6ms)
+
+
+Started GET "/songs/11" for 74.73.38.177 at 2018-01-16 22:54:42 +0000
+Cannot render console from 74.73.38.177! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mSong Load (0.2ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 11]]
